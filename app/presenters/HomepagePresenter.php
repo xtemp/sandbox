@@ -18,7 +18,6 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderTest1()
 	{
-		$this->template->getLatte()->setLoader(new \XTemp\Loader($this));
 		$this->template->value = "12";
 		$this->template->html = "<ahoj>";
 
@@ -31,12 +30,6 @@ class HomepagePresenter extends BasePresenter
 		$this->template->carList = $carList;
 	}
 	
-	public function renderTest2()
-	{
-		$this->template->getLatte()->setLoader(new \XTemp\Loader($this));
-		$this->template->value = "12";
-	}
-
 	
 	
 }
