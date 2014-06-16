@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://github.com/xtemp/ns/core"
+	xmlns:h="http://github.com/xtemp/ns/html"
+>
+<h:head>
+	<title>Ahoj</title>
+</h:head>
+<h:body>
+	<c:if test="$value &gt; 2">
+		<p class="nazdar">pokus</p>
+	</c:if>
+	<p>This is <c:a href="default">a link</c:a>.</p>
+	<p>The value is <c:out value="$html" escapeXml="true"/>.</p>
+	
+	<h1>Data Table</h1>
+	
+	<h:dataTable value="$carList" var="$car" class="pokus">
+		<caption>Table of cars</caption>
+        <h:tableColumn headerText="Car owner">
+        	<c:out value="$car->getOwner()" />
+        </h:tableColumn>
+        <h:tableColumn headerText="Car color" sortBy="string">
+        	<c:out value="$car->getColor()" /> color
+        </h:tableColumn>
+        <h:tableColumn headerText="Mileage" sortBy="int">
+        	<c:out value="$car->getMileage()" />
+        </h:tableColumn>
+        <h:tableColumn headerText="Production year" sortBy="int">
+        	<c:out value="$car->getYear()" />
+        </h:tableColumn>
+        <h:tableColumn headerText="Manufacturer" sortBy="string">
+        	<c:out value="$car->getManufacturer()" />
+        </h:tableColumn>
+	</h:dataTable>
+	
+</h:body>
+</html>

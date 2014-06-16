@@ -8,3 +8,7 @@ nette:
 		password:
 		options:
 			lazy: yes
+
+services:
+	- App\LocalRouterFactory
+	router: @App\LocalRouterFactory::createRouter
