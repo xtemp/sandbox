@@ -1,0 +1,29 @@
+{
+	"name": "xtemp/sandbox",
+	"description": "The sandbox is a pre-packaged Nette Framework project including XTemp. It's based on the official Nette sandbox.",
+	"homepage": "http://github.com/xtemp",
+	"type": "project",
+	"license": ["GPL-3.0"],
+	"authors": [
+		{
+			"name": "Radek Burget",
+			"homepage": "http://burget.net"
+		},
+		{
+			"name": "David Grudl",
+			"homepage": "http://davidgrudl.com"
+		},
+		{
+			"name": "Nette Community",
+			"homepage": "http://nette.org/contributors"
+		}
+	],
+	"require": {
+		"php": ">= 5.3.7",
+		"nette/nette": "~2.2.1"
+	},
+	"require-dev": {
+		"nette/tester": "~1.0"
+	},
+	"minimum-stability": "stable"
+}
