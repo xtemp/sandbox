@@ -6,7 +6,8 @@
 <h:head>
 	<title>Test 2</title>
 </h:head>
-<ui:composition template="../layout.xhtml">
+<ui:composition template="../layoutVar.xhtml">
+	<ui:param name="year" value="2014" />
 	<ui:define name="title">Templating test</ui:define>
 	<ui:define name="content">
 		<p>This is main content.</p>

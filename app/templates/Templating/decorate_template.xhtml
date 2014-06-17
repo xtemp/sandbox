@@ -12,7 +12,14 @@
         <h2>
             <ui:insert name="title" />
         </h2>
+        
         <ui:insert name="body" />
+        
+		<div id="footer">
+		  <ui:insert name="footer">
+		  	&copy; <c:out value="$year"></c:out>
+		  </ui:insert>
+		</div>
     </ui:composition>
     This text will be removed.
 </body>
