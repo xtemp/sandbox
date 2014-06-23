@@ -4,13 +4,14 @@ namespace App\Presenters;
 
 use Nette,
 	App\Model,
-	Nette\Diagnostics\Debugger;
+	Nette\Diagnostics\Debugger,
+	XTemp\Bridges\Nette\XTempPresenter;
 
 
 /**
  * Error presenter.
  */
-class ErrorPresenter extends BasePresenter
+class ErrorPresenter extends XTempPresenter
 {
 
 	/**
