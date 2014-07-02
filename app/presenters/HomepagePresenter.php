@@ -19,6 +19,7 @@ class HomepagePresenter extends BasePresenter
 	public function renderTest1()
 	{
 		$this->template->value = "12";
+		$this->template->array = array("orange", 12, 13.5);
 		$this->template->html = "<ahoj>";
 
 		$carList = new \Nette\ArrayList();

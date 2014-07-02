@@ -33,5 +33,23 @@
         </h:tableColumn>
 	</h:dataTable>
 	
+	<h2>Scripting</h2>
+	
+	<p>Script:</p>
+	
+	<script type="text/javascript">
+	<![CDATA[
+	function sendValues(p1, p2)
+	{
+		document.write("JS values: p1=" + p1 + " p2=" + p2 + "<br>");
+	}
+	]]>
+	
+	</script>
+	<c:callFunction name="sendValues">
+		<c:param value="#{$value}" encoding="string" />
+		<c:param value="#{$array}" encoding="json" />
+	</c:callFunction>
+	
 </h:body>
 </html>
