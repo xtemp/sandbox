@@ -17,7 +17,7 @@ class SignPresenter extends BasePresenter
 	 * Sign-in form factory.
 	 * @return Nette\Application\UI\Form
 	 */
-	protected function createComponentSignInForm()
+	protected function dontcreateComponentSignInForm()
 	{
 		$form = new Nette\Application\UI\Form;
 		$form->addText('username', 'Username:')
