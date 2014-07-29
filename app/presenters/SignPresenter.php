@@ -11,8 +11,18 @@ use Nette,
  */
 class SignPresenter extends BasePresenter
 {
+	/** @SessionScoped */
+	protected $username;
+	/** @SessionScoped */
+	protected $password;
 
-
+	public function renderIn()
+	{
+		//$this->username = "pokus";
+		$this->template->username = $this->username;
+		$this->template->password = $this->password;
+	}
+	
 	/**
 	 * Sign-in form factory.
 	 * @return Nette\Application\UI\Form

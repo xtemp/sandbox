@@ -12,6 +12,8 @@
 		
 		<!-- <c:component name="signInForm" />  -->
 
+		<c:out value="#{$username}" />
+
 		<h:form id="signInForm">
 			<h:panelGrid columns="2">
 				<h:outputLabel for="username" value="Username:" />
@@ -20,6 +22,9 @@
 				<h:outputLabel for="password" value="Password:"
 					required="true" requiredMessage="Please enter your password."/>
 				<h:inputText id="password" value="#{$password}" />
+				
+				<!-- <h:commandButton id="submit" value="#{messages.submitLabel}" />  -->
+				
 				<!-- <f:facet name="footer">
 					<h:panelGroup style="display:block; text-align:center">
 						<h:commandButton id="submit" value="#{messages.submitLabel}" />
@@ -27,6 +32,8 @@
 				</f:facet>  -->
 			</h:panelGrid>
 		</h:form>
+
+		<c:a href="Sign:in">renew</c:a>
 
 	</ui:define>
 </ui:composition>
