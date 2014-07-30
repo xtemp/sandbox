@@ -12,15 +12,13 @@ use Nette,
 class SignPresenter extends BasePresenter
 {
 	/** @SessionScoped */
-	protected $username;
+	public $username;
 	/** @SessionScoped */
-	protected $password;
+	public $password;
 
 	public function renderIn()
 	{
 		//$this->username = "pokus";
-		$this->template->username = $this->username;
-		$this->template->password = $this->password;
 	}
 	
 	/**

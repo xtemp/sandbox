@@ -12,18 +12,18 @@
 		
 		<!-- <c:component name="signInForm" />  -->
 
-		<c:out value="#{$username}" />
+		<c:out value="^{$username}" />
 
 		<h:form id="signInForm">
 			<h:panelGrid columns="2">
 				<h:outputLabel for="username" value="Username:" />
-				<h:inputText id="username" value="#{$username}"
+				<h:inputText id="username" value="^{$username}"
 					required="true" requiredMessage="Please enter your username."/>
 				<h:outputLabel for="password" value="Password:"
 					required="true" requiredMessage="Please enter your password."/>
-				<h:inputText id="password" value="#{$password}" />
+				<h:inputText id="password" value="^{$password}" />
 				
-				<!-- <h:commandButton id="submit" value="#{messages.submitLabel}" />  -->
+				<h:commandButton id="submit" value="Log in" action="#{$presenter->loginFormSubmitted}" />
 				
 				<!-- <f:facet name="footer">
 					<h:panelGroup style="display:block; text-align:center">
