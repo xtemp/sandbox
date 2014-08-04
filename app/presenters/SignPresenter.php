@@ -19,6 +19,7 @@ class SignPresenter extends BasePresenter
 	public function renderIn()
 	{
 		//$this->username = "pokus";
+		//$this->getComponent('pokus');
 	}
 	
 	/**
