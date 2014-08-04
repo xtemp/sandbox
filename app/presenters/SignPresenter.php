@@ -62,6 +62,11 @@ class SignPresenter extends BasePresenter
 		}
 	}
 
+	public function signInFormSubmitted()
+	{
+		//echo "NAZDAR!";
+		$this->redirect('this');
+	}
 
 	public function actionOut()
 	{
