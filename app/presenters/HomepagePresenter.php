@@ -11,7 +11,9 @@ use Nette,
  */
 class HomepagePresenter extends BasePresenter
 {
-
+	/** @SessionScoped */
+	public $username;
+	
 	public function renderDefault()
 	{
 	}
