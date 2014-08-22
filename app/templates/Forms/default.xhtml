@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://github.com/xtemp/ns/core"
+	xmlns:h="http://github.com/xtemp/ns/html"
+	xmlns:ui="http://github.com/xtemp/ns/ui"
+>
+<h:head>
+	<title>XTemp</title>
+</h:head>
+<ui:composition template="../layout.xhtml">
+	<ui:define name="content">
+		<h2>Forms</h2>
+		<c:out value="Remember: ^{$fremember}" />
+		<h:form id="testForm">
+			<h:panelGrid columns="2">
+				<h:outputLabel for="name" value="Name:" />
+				<h:inputText id="name" value="^{$fname}"
+					required="true" requiredMessage="Please enter your name."/>
+				
+				<h:outputLabel for="surname" value="Surname:"
+					required="true" requiredMessage="Please enter your surname."/>
+				<h:inputText id="surname" value="^{$fsurname}" />
+				
+				<h:outputLabel for="remember" value="Remember me:" />
+				<h:selectBooleanCheckbox id="remember" value="^{$fremember}" />
+				
+				<h:commandButton id="submit" value="Save" action="^{$this->formSubmitted}" />
+				
+				<!-- <f:facet name="footer">
+					<h:panelGroup style="display:block; text-align:center">
+						<h:commandButton id="submit" value="#{messages.submitLabel}" />
+					</h:panelGroup>
+				</f:facet>  -->
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

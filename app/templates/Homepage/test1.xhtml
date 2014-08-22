@@ -12,6 +12,12 @@
 	<p>This is <c:a href="default">a link</c:a>.</p>
 	<p>The value is <c:out value="#{$html}" escapeXml="true"/>.</p>
 	
+	<ul>
+		<c:forEach items="#{$carList}" var="$car" varStatus="$stat">
+			<li><c:out value="#{$stat->getCounter()} : #{$car->getManufacturer()}" /></li>
+		</c:forEach>
+	</ul>
+	
 	<h1>Data Table</h1>
 	
 	<h:dataTable value="#{$carList}" var="$car" class="pokus">
