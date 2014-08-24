@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://github.com/xtemp/ns/core"
+	xmlns:h="http://github.com/xtemp/ns/html"
+	xmlns:ui="http://github.com/xtemp/ns/ui"
+>
+<h:head>
+	<title>XTemp</title>
+</h:head>
+<ui:composition template="../layout.xhtml">
+	<ui:define name="content">
+		<h2>Dynamic Form</h2>
+		
+		<h:form id="dynamicForm">
+		
+			<h:dataTable value="#{$carList}" var="$car" class="pokus" varStatus="$stat">
+				<caption>Table of cars</caption>
+		        <h:tableColumn headerText="#">
+		        	<c:out value="#{$stat->getCounter()}" />
+		        </h:tableColumn>
+		        <h:tableColumn headerText="Car owner">
+		        	<h:inputText iid="val#{$stat->getCounter()-1}" value="#{$car->getOwner()}" />
+		        </h:tableColumn>
+		        <h:tableColumn headerText="Car color" sortBy="string">
+		        	<c:out value="#{$car->getColor()}" /> color
+		        </h:tableColumn>
+		        <h:tableColumn headerText="Mileage" sortBy="int">
+		        	<c:out value="#{$car->getMileage()}" />
+		        </h:tableColumn>
+		        <h:tableColumn headerText="Production year" sortBy="int">
+		        	<c:out value="#{$car->getYear()}" />
+		        </h:tableColumn>
+		        <h:tableColumn headerText="Manufacturer" sortBy="string">
+		        	<c:out value="#{$car->getManufacturer()}" />
+		        </h:tableColumn>
+			</h:dataTable>
+			<p>
+				<h:commandButton id="submit" value="Save" action="^{$this->formSubmitted}" />
+			</p>
+			
+		</h:form>
+		
+	</ui:define>
+</ui:composition>
+</html>

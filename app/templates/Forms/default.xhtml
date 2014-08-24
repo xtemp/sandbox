@@ -9,7 +9,13 @@
 <ui:composition template="../layout.xhtml">
 	<ui:define name="content">
 		<h2>Forms</h2>
-		<c:out value="Remember: ^{$fremember}" />
+		<p>
+			<c:a href="dynamic">Dynamic form</c:a>
+		</p>
+		<p>
+			<c:out value="Remember: ^{$fremember}" /><br/>
+			<c:out value="Name: ^{$fname}" />
+		</p>
 		<h:form id="testForm">
 			<h:panelGrid columns="2">
 				<h:outputLabel for="name" value="Name:" />
