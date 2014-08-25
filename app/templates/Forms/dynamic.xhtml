@@ -18,7 +18,7 @@
 		        	<c:out value="#{$stat->getCounter()}" />
 		        </h:tableColumn>
 		        <h:tableColumn headerText="Car owner">
-		        	<h:inputText iid="val#{$stat->getCounter()-1}" value="#{$car->getOwner()}" />
+		        	<h:inputText value="#{$car->getOwner()}" />
 		        </h:tableColumn>
 		        <h:tableColumn headerText="Car color" sortBy="string">
 		        	<c:out value="#{$car->getColor()}" /> color
