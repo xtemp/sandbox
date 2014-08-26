@@ -14,6 +14,10 @@ class FormsPresenter extends BasePresenter
 	public $fsurname;
 	/** @SessionScoped */
 	public $fremember;
+	/** @SessionScoped */
+	public $carList;
+	/** @SessionScoped */
+	public $fselect;
 	
 	public function renderDefault()
 	{
@@ -21,13 +25,19 @@ class FormsPresenter extends BasePresenter
 
 	public function renderDynamic()
 	{
-		$carList = new \Nette\ArrayList();
-		$carList[] = new Car("red", "1990", "Audi", "Hanz", "172400");
-		$carList[] = new Car("blue", "1995", "Audi", "Peter", "159400");
-		$carList[] = new Car("green", "1980", "Ford", "Lukas", "117400");
-		$carList[] = new Car("yellow", "2000", "Skoda", "Quido", "576400");
-		$carList[] = new Car("pink", "2010", "BMW", "Frodo", "16300");
-		$this->template->carList = $carList;
+		if ($this->carList === NULL)
+		{
+			$carList = new \Nette\ArrayList();
+			$carList[] = new Car("red", "1990", "Audi", "Hanz", "172400");
+			$carList[] = new Car("blue", "1995", "Audi", "Peter", "159400");
+			$carList[] = new Car("green", "1980", "Ford", "Lukas", "117400");
+			$carList[] = new Car("yellow", "2000", "Skoda", "Quido", "576400");
+			$carList[] = new Car("pink", "2010", "BMW", "Frodo", "16300");
+			$this->carList = $carList;
+			
+			$fselect = array();
+		}
+		$this->template->carList = $this->carList;
 	}
 	
 	public function formSubmitted()

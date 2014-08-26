@@ -37,7 +37,7 @@ class HomepagePresenter extends BasePresenter
 	
 }
 
-class Car {
+class Car extends \Nette\Object {
 
 	private $color;
 	private $year;

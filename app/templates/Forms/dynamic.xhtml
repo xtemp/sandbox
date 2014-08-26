@@ -12,13 +12,16 @@
 		
 		<h:form id="dynamicForm">
 		
-			<h:dataTable value="#{$carList}" var="$car" class="pokus" varStatus="$stat">
+			<h:dataTable value="^{$carList}" var="$car" class="pokus" varStatus="$stat">
 				<caption>Table of cars</caption>
 		        <h:tableColumn headerText="#">
 		        	<c:out value="#{$stat->getCounter()}" />
 		        </h:tableColumn>
+		        <!-- <h:tableColumn headerText="S">
+		        	<h:selectBooleanCheckbox value="^{$fselect[{$stat->getCounter()-1}]}" />
+		        </h:tableColumn>  -->
 		        <h:tableColumn headerText="Car owner">
-		        	<h:inputText value="#{$car->getOwner()}" />
+		        	<h:inputText value="^{$car->owner}" />
 		        </h:tableColumn>
 		        <h:tableColumn headerText="Car color" sortBy="string">
 		        	<c:out value="#{$car->getColor()}" /> color
@@ -37,6 +40,20 @@
 				<h:commandButton id="submit" value="Save" action="^{$this->formSubmitted}" />
 			</p>
 			
+		</h:form>
+		
+		<h:form id="dynamicFormForeach">
+			<ul>
+				<c:forEach items="^{$carList}" var="$car" varStatus="$stat">
+					<li>
+						<c:out value="#{$stat->getCounter()} : " />
+						<h:inputText value="^{$car->color}" />
+					</li>
+				</c:forEach>
+			</ul>
+			<p>
+				<h:commandButton id="submit" value="Save" action="^{$this->formSubmitted}" />
+			</p>
 		</h:form>
 		
 	</ui:define>
