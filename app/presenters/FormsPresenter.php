@@ -35,7 +35,7 @@ class FormsPresenter extends BasePresenter
 			$carList[] = new Car("pink", "2010", "BMW", "Frodo", "16300");
 			$this->carList = $carList;
 			
-			$fselect = array();
+			$this->fselect = array_fill(0, 5, FALSE);
 		}
 		$this->template->carList = $this->carList;
 	}

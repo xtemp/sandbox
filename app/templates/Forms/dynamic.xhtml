@@ -17,9 +17,9 @@
 		        <h:tableColumn headerText="#">
 		        	<c:out value="#{$stat->getCounter()}" />
 		        </h:tableColumn>
-		        <!-- <h:tableColumn headerText="S">
-		        	<h:selectBooleanCheckbox value="^{$fselect[{$stat->getCounter()-1}]}" />
-		        </h:tableColumn>  -->
+		        <h:tableColumn headerText="S">
+		        	<h:selectBooleanCheckbox value="^{$fselect[$iterations]}" />
+		        </h:tableColumn>
 		        <h:tableColumn headerText="Car owner">
 		        	<h:inputText value="^{$car->owner}" />
 		        </h:tableColumn>
@@ -48,6 +48,9 @@
 					<li>
 						<c:out value="#{$stat->getCounter()} : " />
 						<h:inputText value="^{$car->color}" />
+						<c:if test="^{$fselect[$iterations]}">
+							<c:out value="SELECTED"/>
+						</c:if>
 					</li>
 				</c:forEach>
 			</ul>
