@@ -42,7 +42,7 @@ class FormsPresenter extends BasePresenter
 	
 	public function formSubmitted()
 	{
-		//echo "NAZDAR!";
+		$this->flashMessage("Form processed");
 		$this->redirect('this');
 	}
 	

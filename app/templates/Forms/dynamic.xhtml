@@ -12,13 +12,14 @@
 		
 		<h:form id="dynamicForm">
 		
-			<h:dataTable value="^{$carList}" var="$car" class="pokus" varStatus="$stat">
+			<h:dataTable value="^{$carList}" var="$car" class="pokus" varStatus="$stat" varIndex="$ii">
 				<caption>Table of cars</caption>
 		        <h:tableColumn headerText="#">
 		        	<c:out value="#{$stat->getCounter()}" />
 		        </h:tableColumn>
 		        <h:tableColumn headerText="S">
-		        	<h:selectBooleanCheckbox value="^{$fselect[$iterations]}" />
+		        	<h:selectBooleanCheckbox value="^{$fselect[$ii]}" />
+		        	<!-- <h:selectBooleanCheckbox value="^{$fselect[$stat->getCounter()-1]}" />  -->
 		        </h:tableColumn>
 		        <h:tableColumn headerText="Car owner">
 		        	<h:inputText value="^{$car->owner}" />
@@ -44,7 +45,7 @@
 		
 		<h:form id="dynamicFormForeach">
 			<ul>
-				<c:forEach items="^{$carList}" var="$car" varStatus="$stat">
+				<c:forEach items="^{$carList}" var="$car" varStatus="$stat" varIndex="$ii">
 					<li>
 						<c:out value="#{$stat->getCounter()} : " />
 						<h:inputText value="^{$car->color}" />
