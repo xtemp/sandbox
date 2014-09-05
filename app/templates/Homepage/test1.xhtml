@@ -25,6 +25,11 @@
         <h:tableColumn headerText="Car owner">
         	<c:out value="#{$car->getOwner()}" />
         </h:tableColumn>
+        <h:tableColumn headerText="Since">
+        	<c:out value="#{$car->getOwnSince()}">
+        		<c:convertDateTime type="date" />
+        	</c:out>
+        </h:tableColumn>
         <h:tableColumn headerText="Car color" sortBy="string">
         	<c:out value="#{$car->getColor()}" /> color
         </h:tableColumn>

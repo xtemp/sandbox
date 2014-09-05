@@ -25,11 +25,11 @@ class HomepagePresenter extends BasePresenter
 		$this->template->html = "<ahoj>";
 
 		$carList = new \Nette\ArrayList();
-		$carList[] = new Car("red", "1990", "Audi", "Hanz", "172400");
-		$carList[] = new Car("blue", "1995", "Audi", "Peter", "159400");
-		$carList[] = new Car("green", "1980", "Ford", "Lukas", "117400");
-		$carList[] = new Car("yellow", "2000", "Skoda", "Quido", "576400");
-		$carList[] = new Car("pink", "2010", "BMW", "Frodo", "16300");
+		$carList[] = new Car("red", "1990", "Audi", "Hanz", new \DateTime("1 Mar 1992"), "172400");
+		$carList[] = new Car("blue", "1995", "Audi", "Peter", new \DateTime("31 May 1999"), "159400");
+		$carList[] = new Car("green", "1980", "Ford", "Lukas", new \DateTime("4 Oct 1990"), "117400");
+		$carList[] = new Car("yellow", "2000", "Skoda", "Quido", new \DateTime("5 Apr 2010"), "576400");
+		$carList[] = new Car("pink", "2010", "BMW", "Frodo", new \DateTime("2010-06-25"), "16300");
 		$this->template->carList = $carList;
 	}
 	
@@ -43,13 +43,15 @@ class Car extends \Nette\Object {
 	private $year;
 	private $manufacturer;
 	private $owner;
+	private $ownSince;
 	private $mileage;
 
-	function __construct($color, $year, $manufacturer, $owner, $mileage) {
+	function __construct($color, $year, $manufacturer, $owner, $ownSince, $mileage) {
 		$this->color = $color;
 		$this->year = $year;
 		$this->manufacturer = $manufacturer;
 		$this->owner = $owner;
+		$this->ownSince = $ownSince;
 		$this->mileage = $mileage;
 	}
 
@@ -57,6 +59,10 @@ class Car extends \Nette\Object {
 		return $this->owner;
 	}
 
+	public function getOwnSince() {
+		return $this->ownSince;
+	}
+	
 	public function getMileage() {
 		return $this->mileage;
 	}
