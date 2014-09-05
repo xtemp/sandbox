@@ -63,6 +63,10 @@ class Car extends \Nette\Object {
 		return $this->ownSince;
 	}
 	
+	public function setOwnSince($date) {
+		$this->ownSince = $date;
+	}
+	
 	public function getMileage() {
 		return $this->mileage;
 	}

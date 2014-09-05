@@ -24,6 +24,11 @@
 		        <h:tableColumn headerText="Car owner">
 		        	<h:inputText value="^{$car->owner}" />
 		        </h:tableColumn>
+		        <h:tableColumn headerText="Since">
+		        	<h:inputText value="^{$car->ownSince}">
+		        		<c:convertDateTime type="both" pattern="Y-d-m" />
+		        	</h:inputText>
+		        </h:tableColumn>
 		        <h:tableColumn headerText="Car color" sortBy="string">
 		        	<c:out value="#{$car->getColor()}" /> color
 		        </h:tableColumn>
