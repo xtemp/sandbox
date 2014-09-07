@@ -21,7 +21,9 @@
 					required="true" requiredMessage="Please enter your username."/>
 				<h:outputLabel for="password" value="Password:"
 					required="true" requiredMessage="Please enter your password."/>
-				<h:inputSecret id="password" value="^{$password}" />
+				<h:inputSecret id="password" value="^{$password}">
+					<c:validateLength minimum="2" maximum="10" allowEmpty="true" message="Invalid length" />
+				</h:inputSecret>
 				
 				<h:commandButton id="submit" value="Log in" action="^{$this->signInFormSubmitted}" />
 				
