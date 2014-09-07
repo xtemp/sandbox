@@ -15,15 +15,20 @@
 		<c:out value="^{$username}" />
 
 		<h:form id="signInForm">
+			<h:messages />
 			<h:panelGrid columns="2">
 				<h:outputLabel for="username" value="Username:" />
 				<h:inputText id="username" value="^{$username}"
 					required="true" requiredMessage="Please enter your username."/>
 				<h:outputLabel for="password" value="Password:"
 					required="true" requiredMessage="Please enter your password."/>
-				<h:inputSecret id="password" value="^{$password}">
-					<c:validateLength minimum="2" maximum="10" allowEmpty="true" message="Invalid length" />
-				</h:inputSecret>
+					
+				<h:panelGroup>	
+					<h:inputSecret id="password" value="^{$password}">
+						<c:validateLength minimum="2" maximum="10" allowEmpty="true" message="Invalid length" />
+					</h:inputSecret>
+					<h:message for="password" class="errors" />
+				</h:panelGroup>
 				
 				<h:commandButton id="submit" value="Log in" action="^{$this->signInFormSubmitted}" />
 				
