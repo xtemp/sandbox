@@ -13,6 +13,7 @@
 		<!-- <c:component name="signInForm" />  -->
 
 		<c:out value="^{$username}" />
+		<c:if test="^{$remember}">(remember)</c:if>
 
 		<h:form id="signInForm">
 			<h:messages />
@@ -28,6 +29,14 @@
 						<c:validateLength minimum="2" maximum="10" allowEmpty="true" message="Invalid length" />
 					</h:inputSecret>
 					<h:message for="password" class="errors" />
+				</h:panelGroup>
+				
+				<h:panelGroup>
+				</h:panelGroup>
+				
+				<h:panelGroup>
+					<h:selectBooleanCheckbox id="remember" value="^{$remember}" />
+					<h:outputLabel for="remember" value="Keep me signed in" />
 				</h:panelGroup>
 				
 				<h:commandButton id="submit" value="Log in" action="^{$this->signInFormSubmitted}" />

@@ -13,8 +13,10 @@ class SignPresenter extends BasePresenter
 {
 	/** @SessionScoped */
 	public $username;
-	/** @SessionScoped */
+	/** @PresenterScoped */
 	public $password;
+	/** @PresenterScoped */
+	public $remember;
 
 	public function renderIn()
 	{
