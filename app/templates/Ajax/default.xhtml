@@ -2,22 +2,21 @@
 	xmlns:c="http://github.com/xtemp/ns/core"
 	xmlns:h="http://github.com/xtemp/ns/html"
 	xmlns:ui="http://github.com/xtemp/ns/ui"
+	xmlns:ax="http://github.com/xtemp/ns/ajax"
 >
 <h:head>
 	<title>XTemp</title>
 </h:head>
 <ui:composition template="../layout.xhtml">
 	<ui:define name="content">
-		<p>Username: <c:out value="^{$username}" /></p>
-	
-		<h2>Examples:</h2>
-		<ul>
-			<li><c:a href="test1">Simple XHTML page</c:a></li>
-			<li><c:a href="Templating:">Templating</c:a></li>
-			<li><c:a href="Sign:in">Sign in</c:a></li>
-			<li><c:a href="Forms:">Forms</c:a></li>
-			<li><c:a href="Ajax:">Ajax</c:a></li>
-		</ul>
+		<h2>AJAX</h2>
+		
+		<p>This is <ax:a href="switch!">an ajax link</ax:a>.</p>
+		
+		{snippet test}
+		<p>POKUS {$presenter->cnt}</p>
+		{/snippet}
+		
 	</ui:define>
 </ui:composition>
 </html>
