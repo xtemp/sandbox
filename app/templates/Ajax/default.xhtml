@@ -11,11 +11,20 @@
 	<ui:define name="content">
 		<h2>AJAX</h2>
 		
-		<p>This is <ax:a href="switch!">an ajax link</ax:a>.</p>
+		<p>This is <ax:actionLink action="increment" reRender="test" params="2">Increment counter</ax:actionLink>.</p>
 		
-		{snippet test}
-		<p>POKUS {$presenter->cnt}</p>
-		{/snippet}
+		<ax:panel id="test">
+		<p>POKUS 
+			<c:out value="#{$presenter->cnt}" />
+			<c:out value="^{$cnt}" />
+		</p>
+		</ax:panel>
+
+		<h:form id='iform'>
+			<h:outputLabel for="amount" value="Amount" />
+			<h:inputText id="amount" value="^{$amount}" size="2" />
+			<h:commandButton action="^{$this->submitAmount}" value="Increment" />
+		</h:form>
 		
 	</ui:define>
 </ui:composition>

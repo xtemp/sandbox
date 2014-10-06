@@ -8,11 +8,16 @@ use Nette,
 
 class AjaxPresenter extends BasePresenter
 {
-	/** @SessionScoped */
+	/** @PresenterScoped */
 	public $cnt = 0;
+	
+	/** @PresenterScoped */
+	public $amount = 1;
+	
 	
 	public function renderDefault()
 	{
+		//$this->template->_xt_ctx = new \XTemp\Tree\TemplateContext($this);
 	}
 
 	public function formSubmitted()
@@ -21,9 +26,14 @@ class AjaxPresenter extends BasePresenter
 		$this->redirect('this');
 	}
 	
-	public function handleSwitch()
+	public function actionIncrement($amount)
 	{
-		$this->cnt++;
+		$this->cnt += $amount;
+	}
+	
+	public function submitAmount()
+	{
+		$this->cnt += $this->amount;
 		$this->invalidateControl('test');
 	}
 	
