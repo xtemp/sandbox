@@ -1,9 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:c="http://xtemp.github.io/ns/core"
 	xmlns:h="http://xtemp.github.io/ns/html"
+	lang="cs"
 >
 <h:head>
 	<title>Ahoj</title>
+	<meta charset="utf-8"/>
 </h:head>
 <h:body>
 	<c:if test="#{$value &gt; 2}">
@@ -17,6 +19,10 @@
 			<li><c:out value="#{$stat->getCounter()} : #{$car->getManufacturer()}" /></li>
 		</c:forEach>
 	</ul>
+	
+	<div>
+		FirstLine<br/>SecondLine<br/>ThirdLine
+	</div>
 	
 	<h1>Data Table</h1>
 	
